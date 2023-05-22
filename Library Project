@@ -1,0 +1,53 @@
+print("~"*40)
+print(" WELCOME TO SHARMA LIBRARY: ")
+print("~"*40)
+print("Please Enter Your Username & Password")
+print("-"*40)
+
+while True:
+    books_name = {"Math" : 10,"Rich Dad Poor Dad": 15,"SST": 8}
+    user_name = input("enter your username : ")
+    password = input("enter you password : ")
+    borrowed_book = {}
+    if user_name.lower()== "nishu sharma" and password== "nishu123":
+        print("login successfuly")
+        while True:
+            print(""" 
+            Press 1 Add Books
+            Press 2 Borrow books 
+            Press 3 Return Books 
+            Press 4 Display borrowed books details along with person's name.""") 
+
+            choice = int(input("enter your choice : "))
+            if choice == 1:
+                add_book = input("Enter a Book Name You want add : ")
+                add_quantity = int(input("Enter how many books you want to add : "))
+                books_name[add_book]=add_quantity
+                print(books_name)
+                
+            elif choice == 2:
+                name = input("enter you'r name: ")
+                print(books_name)
+                book = input("enter book you want to borrow:")
+                books_name[book] = books_name[book]-1
+                borrowed_book[name] = book
+                print(borrowed_book)
+                print("you have borrowed ",book_name)
+                print(books_name)
+            
+            elif choice == 3:
+                name_user = input("enter your name: ")
+                if name_user in borrowed_book:
+                    books_name[book] =  books_name[book]+1
+                    del borrowed_book[name]
+                    print(name_user,"has returned ",book)
+                    print(books_name)
+                else:
+                    print("ther is no book borrowed by this name: ")
+                
+               
+            elif choice == 4:
+                print(name,"name has borrowed",book)
+    else:
+        print("Plz try again : ")
+        break
